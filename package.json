@@ -1,0 +1,84 @@
+{
+  "name": "gideonidoko-website-backend",
+  "version": "1.0.0",
+  "description": "Gideon Idoko's Personal Website Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "server:dev": "cross-env NODE_ENV=development nodemon",
+    "server:prod": "cross-env NODE_ENV=production nodemon",
+    "start": "node index.js",
+    "build": "tsc",
+    "lint": "eslint src/**/*.ts --max-warnings=0",
+    "format": "eslint src/**/*.ts --fix",
+    "prepare": "husky install",
+    "prettier-format": "prettier --config .prettierrc './src/**/*.ts' --write"
+  },
+  "keywords": [
+    "gideon",
+    "idoko",
+    "portfolio",
+    "website",
+    "backend"
+  ],
+  "author": "Gideon Idoko <iamgideonidoko@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.2",
+    "ajv": "^8.10.0",
+    "ajv-formats": "^2.1.1",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.10.8",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-rate-limit": "^6.3.0",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "html-entities": "^2.3.2",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "mongoose": "^6.2.3",
+    "mongoose-paginate-v2": "^1.6.3",
+    "morgan": "^1.10.0",
+    "redis": "^4.0.4",
+    "xss": "^1.0.10",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/compression": "^1.7.2",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/http-errors": "^1.8.2",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.21",
+    "@types/nodemailer": "^6.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.5.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
